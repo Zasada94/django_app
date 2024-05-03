@@ -13,7 +13,8 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         return user
 
-    class PostSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Postfields = ["id", "title", "content", "created_at", "author"]
-            extra_kwargs = {"author": {"read_only": True}}
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Postfields = ["id", "title", "content", "created_at", "author"]
+        extra_kwargs = {"author": {"read_only": True}}
