@@ -25,6 +25,7 @@ class PostDelete(generics.DestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
+    # permission_classes = [AllowAny]
 
     def get_queryset(self):
         user = self.request.user
