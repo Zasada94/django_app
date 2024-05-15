@@ -70,7 +70,7 @@ Development server will run at:
 http://127.0.0.1:8000/
 ```
 
-- _Secondly, split terminal, change direction to frontend and run the front-end part using commands below_
+- _Thirdly, split terminal, change direction to frontend and run the front-end part using commands below_
 
 Type:
 
