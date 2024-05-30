@@ -1,5 +1,5 @@
 import "../styles/Post.css";
-
+import { Link } from "react-router-dom";
 function Post({ post, onDelete }) {
 	const formattedDate = new Date(post.created_at).toLocaleDateString("pl-PL");
 
@@ -11,6 +11,9 @@ function Post({ post, onDelete }) {
 			<button className="delete-button" onClick={() => onDelete(post.id)}>
 				Delete
 			</button>
+			<Link to={`/posts/${post.id}/edit`}>
+				<button className="edit-button"> Edit</button>
+			</Link>
 		</div>
 	);
 }

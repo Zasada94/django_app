@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import EditPost from "./pages/EditPost";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Logout from "./components/Logout";
 
@@ -27,6 +28,7 @@ function App() {
 				<Route path="/login" element={<Login />} />
 				<Route path="/logout" element={<Logout />} />
 				<Route path="/register" element={<RegisterAndLogout />} />
+				<Route path="/posts/:postId/edit" element={<EditPost />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>

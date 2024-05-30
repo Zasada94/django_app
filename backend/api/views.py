@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from rest_framework import generics
+from rest_framework import generics, views, response
 from .serializers import UserSerializer, PostSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Post
@@ -30,6 +30,29 @@ class PostDelete(generics.DestroyAPIView):
     def get_queryset(self):
         user = self.request.user
         return Post.objects.filter(author=user)
+
+
+class PostDetail(generics.RetrieveUpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+# class PostDetail(views.APIView):
+#     def get_object(self, pk):
+#         try:
+#             return Post.objects.get(pk=pk)
+#         except Post.DoesNotExist:
+#             raise response.Http404
+
+#     def put(self, request, pk, format=None):
+#         post = self.get_object(pk)
+#         serializer = PostSerializer(post, data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return response.Response(serializer.data)
+#         return response.Response(
+#             serializer.errors, status=response.status.HTTP_400_BAD_REQUEST
+#         )
 
 
 class CreateUserView(generics.ListCreateAPIView):
