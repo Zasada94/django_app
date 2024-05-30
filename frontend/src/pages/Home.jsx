@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import api from "../api";
 import Post from "../components/Post";
 import "../styles/Home.css";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+	const navigate = useNavigate();
 	const [posts, setPosts] = useState([]);
 	const [content, setContent] = useState("");
 	const [title, setTitle] = useState("");
@@ -47,10 +49,15 @@ function Home() {
 			.catch((err) => alert(err));
 	};
 
+	const handleLogout = () => {
+		navigate("/logout");
+	};
+
 	return (
 		<div>
 			<div>
 				<h2>Posts</h2>
+				<button onClick={handleLogout}>Logout</button>
 				{posts.map((post) => (
 					<Post post={post} onDelete={deletePost} key={post.id} />
 				))}
