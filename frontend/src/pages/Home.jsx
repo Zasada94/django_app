@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import Post from "../components/Post";
-import "../styles/Home.css";
+// import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
 
 function Home() {

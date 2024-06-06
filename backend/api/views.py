@@ -36,25 +36,6 @@ class PostDetail(generics.RetrieveUpdateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-
-# class PostDetail(views.APIView):
-#     def get_object(self, pk):
-#         try:
-#             return Post.objects.get(pk=pk)
-#         except Post.DoesNotExist:
-#             raise response.Http404
-
-#     def put(self, request, pk, format=None):
-#         post = self.get_object(pk)
-#         serializer = PostSerializer(post, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return response.Response(serializer.data)
-#         return response.Response(
-#             serializer.errors, status=response.status.HTTP_400_BAD_REQUEST
-#         )
-
-
 class CreateUserView(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

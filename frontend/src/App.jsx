@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import EditPost from "./pages/EditPost";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Logout from "./components/Logout";
+import "./styles/main.css";
 
 function RegisterAndLogout() {
 	localStorage.clear();

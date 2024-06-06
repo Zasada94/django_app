@@ -1,5 +1,6 @@
-import "../styles/Post.css";
+// import "../styles/Post.css";
 import { Link } from "react-router-dom";
+
 function Post({ post, onDelete }) {
 	const formattedDate = new Date(post.created_at).toLocaleDateString("pl-PL");
 

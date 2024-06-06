@@ -3,12 +3,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import api from "../api";
 
 function EditPost() {
-	const { postId } = useParams(); // Get postId from URL
+	const { postId } = useParams(); 
 	const navigate = useNavigate();
 	const [post, setPost] = useState({ title: "", content: "" });
 
 	useEffect(() => {
-		// Fetch post data by postId
 		api
 			.get(`/api/posts/${postId}/`)
 			.then((res) => setPost(res.data))
@@ -26,7 +25,7 @@ function EditPost() {
 			.put(`/api/posts/${postId}/`, post)
 			.then(() => {
 				console.log("Post updated successfully.");
-				navigate("/"); // Redirect to home after saving
+				navigate("/"); 
 			})
 			.catch((error) => console.error("Error updating post:", error));
 	};
