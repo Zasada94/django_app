@@ -11,6 +11,13 @@
 <p align="center" style="margin: 0;">• React.js, CSS as a front-end</p>
 <p align="center">• Django & Python as a back-end</p>
 
+## Table of contents
+
+- [Technologies](#technologies)
+- [Features](#features)
+- [How to install](#how-to-install)
+- [Screenshots](#screenshots)
+
 ## Technologies
 
 Used technologies:
@@ -29,7 +36,14 @@ Used also:
 - react-router-dom
 - jwt-decode
 
-## How to run this full-stack app?
+## Features
+- Making notes for logged in user
+- Login and Register with users database
+- Posts database
+- deleting, editing, adding posts
+- admin panel with users and posts
+
+## How to install
 
 - _Firstly clone this project to your local IDE_
 
@@ -94,3 +108,9 @@ and go to development server:
 ```bash
 http://localhost:5173/
 ```
+
+## Screenshots:
+![screenshot](./screens/1.png)
+![screenshot](./screens/2.png)
+![screenshot](./screens/3.png)
+![screenshot](./screens/4.png)
