@@ -34,3 +34,21 @@
 .form-button:hover {
 	background-color: #0056b3;
 }
+.form-button-reglog {
+	display: flex;
+	align-items: center;
+}
+.is-login-button {
+	padding: 5px 10px;
+	margin: 0 10px;
+	background-color: #5dbea3;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.is-login-button:hover {
+	background-color: #33b249;
+}

@@ -7,11 +7,13 @@ import { useNavigate } from "react-router-dom";
 function Home() {
 	const navigate = useNavigate();
 	const [posts, setPosts] = useState([]);
+	const [user, setUser] = useState("");
 	const [content, setContent] = useState("");
 	const [title, setTitle] = useState("");
 
 	useEffect(() => {
 		getPosts();
+		getUser();
 	}, []);
 
 	const getPosts = () => {
@@ -20,6 +22,17 @@ function Home() {
 			.then((res) => res.data)
 			.then((data) => {
 				setPosts(data);
+				console.log(data);
+			})
+			.catch((err) => alert(err));
+	};
+
+	const getUser = () => {
+		api
+			.get("/api/current-user/")
+			.then((res) => res.data)
+			.then((data) => {
+				setUser(data);
 				console.log(data);
 			})
 			.catch((err) => alert(err));
@@ -54,10 +67,18 @@ function Home() {
 	};
 
 	return (
-		<div>
-			<div>
-				<h2>Posts</h2>
-				<button onClick={handleLogout}>Logout</button>
+		<div className="posts-section">
+			<div className="header-container">
+				<div className="header-wrapper">
+					<h2>Posts</h2>{" "}
+					<div className="header-logout-wrapper">
+						<div className="header-user">hi! {user.username}</div>
+						<button className="logout-button" onClick={handleLogout}>
+							Logout
+						</button>
+					</div>
+				</div>
+
 				{posts.map((post) => (
 					<Post post={post} onDelete={deletePost} key={post.id} />
 				))}

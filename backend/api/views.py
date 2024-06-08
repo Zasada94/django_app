@@ -36,7 +36,16 @@ class PostDetail(generics.RetrieveUpdateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+
 class CreateUserView(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
+
+class CurrentUserView(views.APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return response.Response(serializer.data)

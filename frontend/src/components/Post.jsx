@@ -6,9 +6,15 @@ function Post({ post, onDelete }) {
 
 	return (
 		<div className="post-container">
-			<p className="post-title">{post.title}</p>
-			<p className="post-content">{post.content}</p>
-			<p className="post-date">{formattedDate}</p>
+			<div className="post-element-wrapper">
+				<div className="post-title-title">ID: {post.id}, Title: </div>{" "}
+				<div className="post-title">{post.title}</div>
+			</div>
+			<div className="post-element-wrapper">
+				<div className="post-title-title">Content:</div>{" "}
+				<div className="post-content">{post.content}</div>
+			</div>
+			<div className="post-date">Post added: {formattedDate}</div>
 			<button className="delete-button" onClick={() => onDelete(post.id)}>
 				Delete
 			</button>

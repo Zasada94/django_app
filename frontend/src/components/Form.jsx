@@ -14,7 +14,7 @@ function Form({ route, method }) {
 
 	const name = method === "login" ? "Login" : "Register";
 	const is_login =
-		method === "login" ? "don't have an account?" : "alreaddy have an account?";
+		method === "login" ? "don't have an account?" : "already have an account?";
 	const is_login_button = method === "login" ? "Register" : "Login";
 
 	const handleSubmit = async (e) => {

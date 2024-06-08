@@ -4,11 +4,58 @@ div {
 
 .posts-section {
 	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 }
 
 .posts-section h2 {
 	color: #333;
 	font-size: 24px;
+	display: inline-block;
+	font-weight: 900;
+}
+
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 95%;
+	max-width: 1200px;
+}
+.header-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 95%;
+}
+
+.header-logout-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.header-user {
+	color: #666;
+	margin: 0 10px 0 0;
+}
+
+.logout-button {
+	height: 50%;
+	padding: 5px 10px;
+	background-color: #5dbea3;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+	background-color: #33b249;
 }
 
 .post {
@@ -26,6 +73,7 @@ form {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	max-width: 500px;
 	margin: auto;
+	width: 95%;
 }
 
 form h2 {
