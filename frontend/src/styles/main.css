@@ -258,4 +258,8 @@ form input[type=submit]:hover {
 
 .edit-button:hover {
   background-color: #80669d;
+}
+
+* {
+  box-sizing: border-box;
 }/*# sourceMappingURL=main.css.map */
